@@ -1,18 +1,20 @@
 import Task from "./Task";
+import { FaPlus } from "react-icons/fa";
 
-const TaskList = () => {
-  const tasks = [
-    { id: 1, name: "IR al GYM", completed: true },
-    { id: 2, name: "Meditar", completed: false },
-    { id: 3, name: "Estudiar", completed: true },
-    { id: 4, name: "Descansar", completed: false },
-  ];
-
+const TaskList = ({ tasks }) => {
   return (
     <div>
-      {tasks.map((task, id) => (
-        <Task key={id} name={task.name} completed={task.completed} />
-      ))}
+      <form style={{ display: "flex" }}>
+        <input type="text" placeholder="Agregar nueva tarea" />
+        <button type="submit">
+          <FaPlus />
+        </button>
+      </form>
+      <ul>
+        {tasks.map((task) => (
+          <Task key={task.id} name={task.name} status={task.status} />
+        ))}
+      </ul>
     </div>
   );
 };

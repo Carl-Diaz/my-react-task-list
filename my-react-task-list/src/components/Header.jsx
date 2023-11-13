@@ -1,15 +1,9 @@
-import { FaPlus } from "react-icons/fa";
-
-export default function Header() {
+const Header = ({ title }) => {
   return (
-    <>
-      <h1>Todo App</h1>
-      <form>
-        <input type="text" placeholder="Agregar nueva tarea" />
-        <button type="submit">
-          <FaPlus />
-        </button>
-      </form>
-    </>
+    <div>
+      <h1>{title}</h1>
+    </div>
   );
-}
+};
+
+export default Header;
